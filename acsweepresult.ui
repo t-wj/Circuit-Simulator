@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ACSweepResult</class>
+ <widget class="QDialog" name="ACSweepResult">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1135</width>
+    <height>714</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>交流扫描分析 - 仿真结果</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="variable">
+     <property name="maximumSize">
+      <size>
+       <width>300</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>变量</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="variableSearch">
+          <property name="focusPolicy">
+           <enum>Qt::ClickFocus</enum>
+          </property>
+          <property name="placeholderText">
+           <string>请输入变量或筛选条件……</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>26</horstretch>
+            <verstretch>26</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>26</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>26</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+border: 1px solid black;
+border-left-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="lineWidth">
+           <number>-2</number>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resource/res.qrc">:/background/filter</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>3</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QListWidget" name="variableList">
+        <property name="font">
+         <font>
+          <family>Microsoft YaHei UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>选择变量前复选框以设置纵轴变量</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="toolTip">
+           <string>选中复选框以对该轴使用对数坐标</string>
+          </property>
+          <property name="text">
+           <string>对数坐标</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QCheckBox" name="yAxisLog">
+              <property name="text">
+               <string>左侧纵轴</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="yAxis2Log">
+              <property name="text">
+               <string>右侧纵轴</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QCustomPlot" name="resultPlot" native="true"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resource/res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>variableList</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>ACSweepResult</receiver>
+   <slot>plotCheckedVariables()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>315</x>
+     <y>7</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>variableSearch</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ACSweepResult</receiver>
+   <slot>searchVariable(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>57</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>314</x>
+     <y>63</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>variableSearch</sender>
+   <signal>editingFinished()</signal>
+   <receiver>variableList</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>120</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>yAxisLog</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ACSweepResult</receiver>
+   <slot>plotCheckedVariables()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>147</x>
+     <y>671</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>505</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>yAxis2Log</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ACSweepResult</receiver>
+   <slot>plotCheckedVariables()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>259</x>
+     <y>670</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>315</x>
+     <y>553</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>plotCheckedVariables()</slot>
+  <slot>searchVariable(QString)</slot>
+ </slots>
+</ui>

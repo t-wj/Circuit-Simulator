@@ -1,0 +1,70 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file alias="help">help.svg</file>
+        <file alias="new">new.svg</file>
+        <file alias="selectAll">selectall.svg</file>
+        <file alias="delete">delete.svg</file>
+        <file alias="copy">copy.svg</file>
+        <file alias="cut">cut.svg</file>
+        <file alias="paste">paste.svg</file>
+        <file alias="run">run.svg</file>
+        <file alias="rotate">rotate.svg</file>
+        <file alias="wire">wire.svg</file>
+        <file alias="logo">logo.svg</file>
+        <file alias="save">save.svg</file>
+        <file alias="open">open.svg</file>
+    </qresource>
+    <qresource prefix="/help">
+        <file alias="help">help.html</file>
+    </qresource>
+    <qresource prefix="/translations">
+        <file>qt_zh_CN.qm</file>
+    </qresource>
+    <qresource prefix="/viewPart">
+        <file alias="PMOSFET">pmosfetview.PNG</file>
+        <file alias="VAC">vacview.PNG</file>
+        <file alias="VDC">vdcview.PNG</file>
+        <file alias="VSin">vsinview.PNG</file>
+        <file alias="IDC">idcview.PNG</file>
+        <file alias="L">inductorview.PNG</file>
+        <file alias="NMOSFET">nmosfetview.PNG</file>
+        <file alias="VPulse">vpulseview.PNG</file>
+        <file alias="IPulse">ipulseview.PNG</file>
+        <file alias="D">diodeview.PNG</file>
+        <file alias="GND">groundview.PNG</file>
+        <file alias="NPN">npnview.PNG</file>
+        <file alias="C">capacitorview.PNG</file>
+        <file alias="PNP">pnpview.PNG</file>
+        <file alias="R">resistorview.PNG</file>
+        <file alias="E">vcvsview.PNG</file>
+        <file alias="F">cccsview.PNG</file>
+        <file alias="G">vccsview.PNG</file>
+        <file alias="H">ccvsview.PNG</file>
+    </qresource>
+    <qresource prefix="/part">
+        <file alias="D">diode.PNG</file>
+        <file alias="L">inductor.PNG</file>
+        <file alias="C">capacitor.PNG</file>
+        <file alias="NMOSFET">nmosfet.PNG</file>
+        <file alias="PMOSFET">pmosfet.PNG</file>
+        <file alias="VPulse">vpulse.PNG</file>
+        <file alias="IPulse">ipulse.PNG</file>
+        <file alias="VAC">vac.PNG</file>
+        <file alias="NPN">npn.PNG</file>
+        <file alias="PNP">pnp.PNG</file>
+        <file alias="IDC">idc.PNG</file>
+        <file alias="VDC">vdc.PNG</file>
+        <file alias="VSin">vsin.PNG</file>
+        <file alias="GND">ground.PNG</file>
+        <file alias="R">resistor.PNG</file>
+        <file alias="E">vcvs.PNG</file>
+        <file alias="F">cccs.PNG</file>
+        <file alias="G">vccs.PNG</file>
+        <file alias="H">ccvs.PNG</file>
+    </qresource>
+    <qresource prefix="/background">
+        <file alias="filter">filter.png</file>
+        <file alias="search">search.png</file>
+        <file alias="background">background.png</file>
+    </qresource>
+</RCC>

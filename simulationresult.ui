@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SimulationResult</class>
+ <widget class="QDialog" name="SimulationResult">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>983</width>
+    <height>651</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>仿真结果</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" columnstretch="1,3">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="variable">
+     <property name="maximumSize">
+      <size>
+       <width>300</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>变量</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,20,3,0">
+      <item row="1" column="0">
+       <widget class="QListWidget" name="variableList">
+        <property name="font">
+         <font>
+          <family>Microsoft YaHei UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>双击以设置横轴变量，选择变量前复选框以设置纵轴变量</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="variableSearch">
+          <property name="focusPolicy">
+           <enum>Qt::ClickFocus</enum>
+          </property>
+          <property name="placeholderText">
+           <string>请输入变量或筛选条件……</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>26</horstretch>
+            <verstretch>26</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>26</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>26</width>
+            <height>26</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+border: 1px solid black;
+border-left-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="lineWidth">
+           <number>-2</number>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resource/res.qrc">:/background/filter</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+          <property name="margin">
+           <number>3</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="0">
+       <widget class="QStackedWidget" name="axisSetting">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="timeDomain">
+         <layout class="QGridLayout" name="gridLayout_3">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,3">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>横轴变量</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="xAxixVariable">
+              <property name="text">
+               <string>time</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,3">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="toolTip">
+               <string>选中复选框以对该轴使用对数坐标</string>
+              </property>
+              <property name="text">
+               <string>对数坐标</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QCheckBox" name="TimeDomainXAxisLog">
+                <property name="text">
+                 <string>横轴</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QCheckBox" name="TimeDomainYAxisLog">
+                  <property name="text">
+                   <string>电压轴</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="TimeDomainYAxis2Log">
+                  <property name="text">
+                   <string>电流轴</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_2">
+         <layout class="QGridLayout" name="gridLayout_4">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>60</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,0,0">
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="toolTip">
+               <string>选中复选框以对该轴使用对数坐标</string>
+              </property>
+              <property name="text">
+               <string>对数坐标</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="DCSweepYAxisLog">
+              <property name="text">
+               <string>电压轴</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="DCSweepYAxis2Log">
+              <property name="text">
+               <string>电流轴</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_3">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="1,0,0">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="toolTip">
+               <string>选中复选框以对该轴使用对数坐标</string>
+              </property>
+              <property name="text">
+               <string>对数坐标</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="ACSweepYAxisLog">
+              <property name="text">
+               <string>电压轴</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="ACSweepYAxis2Log">
+              <property name="text">
+               <string>电流轴</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="0">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>60</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QCustomPlot" name="resultPlot" native="true"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resource/res.qrc"/>
+  <include location="resource/res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>variableList</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>SimulationResult</receiver>
+   <slot>plotCheckedVariables()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>213</x>
+     <y>11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xAxixVariable</sender>
+   <signal>editingFinished()</signal>
+   <receiver>SimulationResult</receiver>
+   <slot>plotCheckedVariables()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>168</x>
+     <y>609</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>212</x>
+     <y>411</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>variableList</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>SimulationResult</receiver>
+   <slot>setXAxisVariable(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>588</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>686</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>variableSearch</sender>
+   <signal>editingFinished()</signal>
+   <receiver>variableList</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>140</x>
+     <y>97</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>variableSearch</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>SimulationResult</receiver>
+   <slot>searchVariable(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>200</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TimeDomainXAxisLog</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SimulationResult</receiver>
+   <slot>plotCheckedVariables()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>649</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>606</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TimeDomainYAxisLog</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SimulationResult</receiver>
+   <slot>plotCheckedVariables()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>678</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>635</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TimeDomainYAxis2Log</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SimulationResult</receiver>
+   <slot>plotCheckedVariables()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>676</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>292</x>
+     <y>663</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>plotCheckedVariables()</slot>
+  <slot>setXAxisVariable(QListWidgetItem*)</slot>
+  <slot>searchVariable(QString)</slot>
+ </slots>
+</ui>
