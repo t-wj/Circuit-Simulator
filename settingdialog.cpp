@@ -146,7 +146,7 @@ void SimulationSetting::setDCParameterList()
 		{//假设无重名元件
 			for(int i=0;i<(*it)->parameterNum;i++)
 			{
-                item=new QListWidgetItem("     "+QString((*it)->showParameterViewName(i)),currentList);
+                item=new QListWidgetItem("     "+QString::fromLocal8Bit((*it)->showParameterViewName(i)),currentList);
 				button=new QRadioButton();
 				button->setObjectName(QString::number(i));
 				currentList->setItemWidget(item,button);
@@ -170,7 +170,7 @@ void SimulationSetting::setACParameterList()
 		{//假设无重名元件
 			for(int i=0;i<(*it)->parameterNum;i++)
 			{
-                item=new QListWidgetItem("     "+QString((*it)->showParameterViewName(i)),ui->parametricParameterList);
+                item=new QListWidgetItem("     "+QString::fromLocal8Bit((*it)->showParameterViewName(i)),ui->parametricParameterList);
 				button=new QRadioButton();
 				button->setObjectName(QString::number(i));
 				ui->parametricParameterList->setItemWidget(item,button);
